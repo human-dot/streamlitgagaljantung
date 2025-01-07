@@ -25,17 +25,17 @@ except FileNotFoundError as e:
 feature_names = {
     "age": "Usia",
     "sex": "Jenis Kelamin",
-    "cp": ["Typical angina (0)", "Atypical angina (1)", "Non-anginal pain (2)", "Asymptomatic (3)"],
+    "cp": "Tipe Nyeri Dada" ["Typical angina (Nyeri dada khas)", "Atypical angina (Nyeri dada atipikal)", "Non-anginal pain (Nyeri dada non-anginal)", "Asymptomatic (Tidak ada gejala)"],
     "trestbps": "Tekanan Darah Istirahat (mm Hg)",
     "chol": "Kolesterol (mg/dl)",
-    "fbs": [">120 mg/dl (1)", "Normal (0)"],
-    "restecg": ["Normal (0)", "ST-T wave abnormality (1)", "Hypertrophy (2)"],
+    "fbs": "Gula Darah Puasa"[">120 mg/dl", "Normal"],
+    "restecg": " Hasil Elektrokardiogram Istirahat" ["Normal (Tidak ada kelainan)", "ST-T wave abnormality (Kelainan gelombang ST-T)", "Hypertrophy (Pembesaran ventrikel jantung)"],
     "thalach": "Denyut Jantung Maksimal",
-    "exang": ["Yes (1)", "No (0)"],
+    "exang": "Angina yang Diperburuk oleh Olahraga" ["Yes", "No"],
     "oldpeak": "Depresi ST saat olahraga relatif terhadap istirahat",
-    "slope": ["Downsloping (0)", "Flat (1)", "Upsloping (2)"],
+    "slope": "Kemiringan Segmen ST pada Olahraga Puncak" ["Downsloping (Menurun)", "Flat (Datar)", "Upsloping (Meningkat)"],
     "ca": "Jumlah pembuluh utama (0–3) berwarna oleh fluoroskopi",
-    "thal": ["Normal (1)", "Fixed defect (2)", "Reversible defect (3)"]
+    "thal": ["Normal (Normal)", "Fixed defect (Kelainan tetap)", "Reversible defect (Kelainan yang dapat sembuh)"]
 }
 
 # Fungsi untuk prediksi dengan Decision Tree
