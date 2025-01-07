@@ -25,54 +25,18 @@ except FileNotFoundError as e:
 feature_names = {
     "age": "Usia",
     "sex": "Jenis Kelamin",
-    "cp": {
-        "description": "Jenis nyeri dada",
-        "categories": [
-            "Typical angina/Nyeri dada khas (0)",
-            "Atypical angina/Nyeri dada atipikal (1)",
-            "Non-anginal pain/Nyeri dada non-anginal (2)",
-            "Asymptomatic/Tidak ada gejala (3)"
-        ]
-    },
+    "cp": ["Typical angina/Nyeri dada khas (0)", "Atypical angina/Nyeri dada atipikal (1)", "Non-anginal pain/Nyeri dada non-anginal (2)", "Asymptomatic/Tidak ada gejala (3)"],
     "trestbps": "Tekanan Darah Istirahat (mm Hg)",
     "chol": "Kolesterol (mg/dl)",
-    "fbs": {
-        "description": "Kadar gula darah puasa",
-        "categories": [">120 mg/dl (1)", "Normal (0)"]
-    },
-    "restecg": {
-        "description": "Hasil pemeriksaan elektrokardiografi",
-        "categories": [
-            "Normal/Tidak ada kelainan (0)",
-            "ST-T wave abnormality/Kelainan gelombang ST-T (1)",
-            "Hypertrophy/Pembesaran ventrikel jantung (2)"
-        ]
-    },
+    "fbs": [">120 mg/dl (1)", "Normal (0)"],
+    "restecg": ["Normal/Tidak ada kelainan (0)", "ST-T wave abnormality/Kelainan gelombang ST-T (1)", "Hypertrophy/Pembesaran ventrikel jantung (2)"],
     "thalach": "Denyut Jantung Maksimal",
-    "exang": {
-        "description": "Indikasi angina saat olahraga",
-        "categories": ["Yes (1)", "No (0)"]
-    },
+    "exang": ["Yes (1)", "No (0)"],
     "oldpeak": "Depresi ST saat olahraga relatif terhadap istirahat",
-    "slope": {
-        "description": "Kemiringan segmen ST",
-        "categories": [
-            "Downsloping/Menurun (0)",
-            "Flat/Datar (1)",
-            "Upsloping/Meningkat (2)"
-        ]
-    },
+    "slope": ["Downsloping/Menurun (0)", "Flat/Datar (1)", "Upsloping/Meningkat (2)"],
     "ca": "Jumlah pembuluh utama (0–3) berwarna oleh fluoroskopi",
-    "thal": {
-        "description": "Jenis kelainan thalassemia",
-        "categories": [
-            "Normal (1)",
-            "Fixed defect/Kelainan tetap (2)",
-            "Reversible defect/Kelainan yang dapat sembuh (3)"
-        ]
-    }
+    "thal": ["Normal (1)", "Fixed defect/Kelainan tetap (2)", "Reversible defect/Kelainan yang dapat sembuh (3)"]
 }
-
 
 
 # Fungsi untuk prediksi dengan Decision Tree
