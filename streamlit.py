@@ -25,15 +25,15 @@ except FileNotFoundError as e:
 feature_names = {
     "age": "Usia",
     "sex": "Jenis Kelamin",
-    "cp": ["Tipe Nyeri Dada", ["Typical angina/Nyeri dada khas (0)", "Atypical angina/Nyeri dada atipikal (1)", "Non-anginal pain/Nyeri dada non-anginal (2)", "Asymptomatic/Tidak ada gejala (3)"]],
+    "cp": ("Tipe Nyeri Dada", ["Typical angina/Nyeri dada khas (0)", "Atypical angina/Nyeri dada atipikal (1)", "Non-anginal pain/Nyeri dada non-anginal (2)", "Asymptomatic/Tidak ada gejala (3)"]),
     "trestbps": "Tekanan Darah Istirahat (mm Hg)",
     "chol": "Kolesterol (mg/dl)",
-    "fbs": ["Gula Darah Puasa", [">120 mg/dl (1)", "Normal (0)"]],
-    "restecg": ["Hasil Elektrokardiogram Istirahat", ["Normal/Tidak ada kelainan (0)", "ST-T wave abnormality/Kelainan gelombang ST-T (1)", "Hypertrophy/Pembesaran ventrikel jantung (2)"]],
+    "fbs": ("Gula Darah Puasa", [">120 mg/dl (1)", "Normal (0)"]),
+    "restecg": ("Hasil Elektrokardiogram Istirahat", ["Normal/Tidak ada kelainan (0)", "ST-T wave abnormality/Kelainan gelombang ST-T (1)", "Hypertrophy/Pembesaran ventrikel jantung (2)"]),
     "thalach": "Denyut Jantung Maksimal",
-    "exang": ["Angina yang Diperburuk oleh Olahraga", ["Yes (1)", "No (0)"]],
+    "exang": ("Angina yang Diperburuk oleh Olahraga", ["Yes (1)", "No (0)"]),
     "oldpeak": "Depresi ST saat olahraga relatif terhadap istirahat",
-    "slope": ["Kemiringan Segmen ST pada Olahraga Puncak", ["Downsloping/Menurun (0)", "Flat/Datar (1)", "Upsloping/Meningkat (2)"]],
+    "slope": ("Kemiringan Segmen ST pada Olahraga Puncak", ["Downsloping/Menurun (0)", "Flat/Datar (1)", "Upsloping/Meningkat (2)"]),
     "ca": "Jumlah pembuluh utama (0–3) berwarna oleh fluoroskopi",
     "thal": ["Normal (1)", "Fixed defect/Kelainan tetap (2)", "Reversible defect/Kelainan yang dapat sembuh (3)"]
 }
