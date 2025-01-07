@@ -81,8 +81,8 @@ for feature, description in feature_names.items():
     if feature in ["trestbps", "chol", "thalach", "oldpeak", "ca"]:
         value = st.number_input(description, value=0.0, format="%.2f")
     elif isinstance(description, list):  # Jika fitur memiliki opsi dropdown
-        labels = description
-        options = [int(label.split("(")[-1][0]) for label in labels]
+        labels = description[1]  # Ambil list opsi setelah deskripsi
+        options = [int(label.split("(")[-1][0]) for label in labels]  # Ambil angka setelah '('
         value = st.selectbox(feature, options=options, format_func=lambda x: labels[options.index(x)])
     else:  # Fitur numerik lainnya
         value = st.number_input(description, value=0.0, format="%.2f")
