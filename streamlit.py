@@ -7,7 +7,7 @@ model_dt_path = 'DECISIONTREE_model.joblib'
 scaler_dt_path = 'DECISIONTREE_scaler.joblib'
 
 model_knn_path = 'KNN_model.joblib'
-scaler_knn_path = 'KNN_scaler.joblib'
+scaler_knn_path = 'KNN_model.joblib'
 
 try:
     model_dt = load(model_dt_path)
@@ -25,17 +25,17 @@ except FileNotFoundError as e:
 feature_names = {
     "age": "Usia",
     "sex": "Jenis Kelamin",
-    "cp": ("Tipe Nyeri Dada", ["Typical angina/Nyeri dada khas (0)", "Atypical angina/Nyeri dada atipikal (1)", "Non-anginal pain/Nyeri dada non-anginal (2)", "Asymptomatic/Tidak ada gejala (3)"]),
+    "cp": ["Typical angina (0)", "Atypical angina (1)", "Non-anginal pain (2)", "Asymptomatic (3)"],
     "trestbps": "Tekanan Darah Istirahat (mm Hg)",
     "chol": "Kolesterol (mg/dl)",
-    "fbs": ("Gula Darah Puasa", [">120 mg/dl (1)", "Normal (0)"]),
-    "restecg": ("Hasil Elektrokardiogram Istirahat", ["Normal/Tidak ada kelainan (0)", "ST-T wave abnormality/Kelainan gelombang ST-T (1)", "Hypertrophy/Pembesaran ventrikel jantung (2)"]),
+    "fbs": [">120 mg/dl (1)", "Normal (0)"],
+    "restecg": ["Normal (0)", "ST-T wave abnormality (1)", "Hypertrophy (2)"],
     "thalach": "Denyut Jantung Maksimal",
-    "exang": ("Angina yang Diperburuk oleh Olahraga", ["Yes (1)", "No (0)"]),
+    "exang": ["Yes (1)", "No (0)"],
     "oldpeak": "Depresi ST saat olahraga relatif terhadap istirahat",
-    "slope": ("Kemiringan Segmen ST pada Olahraga Puncak", ["Downsloping/Menurun (0)", "Flat/Datar (1)", "Upsloping/Meningkat (2)"]),
+    "slope": ["Downsloping (0)", "Flat (1)", "Upsloping (2)"],
     "ca": "Jumlah pembuluh utama (0–3) berwarna oleh fluoroskopi",
-    "thal": ["Normal (1)", "Fixed defect/Kelainan tetap (2)", "Reversible defect/Kelainan yang dapat sembuh (3)"]
+    "thal": ["Normal (1)", "Fixed defect (2)", "Reversible defect (3)"]
 }
 
 # Fungsi untuk prediksi dengan Decision Tree
@@ -81,8 +81,8 @@ for feature, description in feature_names.items():
     if feature in ["trestbps", "chol", "thalach", "oldpeak", "ca"]:
         value = st.number_input(description, value=0.0, format="%.2f")
     elif isinstance(description, list):  # Jika fitur memiliki opsi dropdown
-        labels = description[1]  # Ambil list opsi setelah deskripsi
-        options = [int(label.split("(")[-1][0]) for label in labels]  # Ambil angka setelah '('
+        labels = description
+        options = [int(label.split("(")[-1][0]) for label in labels]
         value = st.selectbox(feature, options=options, format_func=lambda x: labels[options.index(x)])
     else:  # Fitur numerik lainnya
         value = st.number_input(description, value=0.0, format="%.2f")
