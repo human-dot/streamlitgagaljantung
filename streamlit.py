@@ -3,11 +3,11 @@ from joblib import load
 import numpy as np
 
 # Muat model dan scaler
-model_dt_path = 'decision_tree_model.joblib'
-scaler_dt_path = 'decision_treescaler.joblib'
+model_dt_path = 'DECISIONTREE_model.joblib'
+scaler_dt_path = 'DECISIONTREE_scaler.joblib'
 
-model_knn_path = 'knn_model.joblib'
-scaler_knn_path = 'knnscaler.joblib'
+model_knn_path = 'KNN_model.joblib'
+scaler_knn_path = 'KNN_model.joblib'
 
 try:
     model_dt = load(model_dt_path)
