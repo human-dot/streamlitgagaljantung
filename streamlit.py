@@ -28,30 +28,30 @@ feature_names = {
     "cp": {
         "description": "Tipe Nyeri Dada",
         "options": [
-            "Typical angina/Nyeri dada khas (0)",
-            "Atypical angina/Nyeri dada atipikal (1)",
-            "Non-anginal pain/Nyeri dada non-anginal (2)",
-            "Asymptomatic/Tidak ada gejala (3)",
+            "Tidak ada gejala",
+            "Nyeri dada atipikal",
+            "Nyeri dada non-anginal",
+            "Nyeri dada khas",
         ],
     },
     "trestbps": {"description": "Tekanan Darah Istirahat (mm Hg)"},
     "chol": {"description": "Kolesterol (mg/dl)"},
     "fbs": {
         "description": "Gula Darah Puasa",
-        "options": [">120 mg/dl (1)", "Normal (0)"],
+        "options": ["Tidak Normal >120 mg/dl", "Normal"],
     },
     "restecg": {
         "description": "Hasil Elektrokardiogram Istirahat",
         "options": [
-            "Normal/Tidak ada kelainan (0)",
-            "ST-T wave abnormality/Kelainan gelombang ST-T (1)",
-            "Hypertrophy/Pembesaran ventrikel jantung (2)",
+            "Pembesaran ventrikel jantung",
+            "Normal",
+            "Kelainan ST-T",
         ],
     },
     "thalach": {"description": "Denyut Jantung Maksimal"},
     "exang": {
         "description": "Angina yang Diperburuk oleh Olahraga",
-        "options": ["Yes (1)", "No (0)"],
+        "options": ["Yes", "No"],
     },
     "oldpeak": {
         "description": "Depresi ST saat olahraga relatif terhadap istirahat",
@@ -59,18 +59,18 @@ feature_names = {
     "slope": {
         "description": "Kemiringan Segmen ST pada Olahraga Puncak",
         "options": [
-            "Downsloping/Menurun (0)",
-            "Flat/Datar (1)",
-            "Upsloping/Meningkat (2)",
+            "Menurun",
+            "Datar",
+            "Meningkat",
         ],
     },
     "ca": {"description": "Jumlah pembuluh utama (0–3) berwarna oleh fluoroskopi"},
     "thal": {
         "description": "Thalassemia",
         "options": [
-            "Normal (1)",
-            "Fixed defect/Kelainan tetap (2)",
-            "Reversible defect/Kelainan yang dapat sembuh (3)",
+            "Kelainan tetap",
+            "Normal",
+            "Kelainan yang dapat sembuh",
         ],
     },
 }
@@ -94,8 +94,13 @@ for feature, details in feature_names.items():
     if "options" in details:
         # Fitur dengan opsi menggunakan dropdown
         value = st.selectbox(details["description"], options=details["options"])
-        # Ambil angka dalam tanda kurung (misalnya "(1)")
-        user_input.append(int(value.split("(")[1].strip(")")))
+        try:
+            # Ambil angka dalam tanda kurung (misalnya "(1)")
+            user_input.append(int(value.split("(")[1].strip(")")))
+        except (IndexError, ValueError):
+            st.error(f"Kesalahan dalam opsi untuk fitur '{details['description']}'. Pastikan format opsi benar.")
+            user_input = None
+            break
     else:
         # Fitur tanpa opsi menggunakan input numerik
         value = st.number_input(details["description"], value=0.0)
