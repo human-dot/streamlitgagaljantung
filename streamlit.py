@@ -77,7 +77,7 @@ feature_names = {
 
 # Pemetaan untuk fitur yang menggunakan teks sebagai input
 gender_map = {"Pria": 1, "Wanita": 0}
-cp_map = {"Tidak ada gejala" : 0, "Nyeri dada atipikal" : 1, "Nyeri dada non-anginal" : 2,"Nyeri dada khas" : 3}
+cp_map = {"Tidak ada gejala": 0, "Nyeri dada atipikal": 1, "Nyeri dada non-anginal": 2,"Nyeri dada khas": 3}
 fbs_map = {"Tidak Normal >120 mg/dl": 1, "Normal": 0}
 restecg_map = {"Pembesaran ventrikel jantung": 1, "Normal": 0, "Kelainan ST-T": 2}
 exang_map = {"Yes": 1, "No": 0}
