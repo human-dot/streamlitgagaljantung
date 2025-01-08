@@ -86,6 +86,8 @@ for feature, details in feature_names.items():
         # Pemetaan berdasarkan fitur
         if feature == "sex":
             user_input.append(gender_map[value])
+        elif feature == "cp":
+            user_input.append(cp_map[value])    
         elif feature == "fbs":
             user_input.append(fbs_map[value])
         elif feature == "restecg":
