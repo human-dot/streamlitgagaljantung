@@ -27,13 +27,7 @@ feature_names = {
     "sex": {"description": "Jenis Kelamin", "options": ["Pria", "Wanita"]},
     "cp": {
         "description": "Tipe Nyeri Dada",
-        "options": [
-            "Tidak ada gejala",
-            "Nyeri dada atipikal",
-            "Nyeri dada non-anginal",
-            "Nyeri dada khas",
-        ],
-    },
+        "options": ["Tidak ada gejala", "Nyeri dada atipikal", "Nyeri dada non-anginal", "Nyeri dada khas"]},
     "trestbps": {"description": "Tekanan Darah Istirahat (mm Hg)"},
     "chol": {"description": "Kolesterol (mg/dl)"},
     "fbs": {
@@ -42,12 +36,7 @@ feature_names = {
     },
     "restecg": {
         "description": "Hasil Elektrokardiogram Istirahat",
-        "options": [
-            "Pembesaran ventrikel jantung",
-            "Normal",
-            "Kelainan ST-T",
-        ],
-    },
+        "options": ["Pembesaran ventrikel jantung", "Normal", "Kelainan ST-T"]},
     "thalach": {"description": "Denyut Jantung Maksimal"},
     "exang": {
         "description": "Angina yang Diperburuk oleh Olahraga",
@@ -58,21 +47,11 @@ feature_names = {
     },
     "slope": {
         "description": "Kemiringan Segmen ST pada Olahraga Puncak",
-        "options": [
-            "Menurun",
-            "Datar",
-            "Meningkat",
-        ],
-    },
+        "options": ["Menurun", "Datar", "Meningkat"]},
     "ca": {"description": "Jumlah pembuluh utama (0–3) berwarna oleh fluoroskopi"},
     "thal": {
         "description": "Thalassemia",
-        "options": [
-            "Kelainan tetap",
-            "Normal",
-            "Kelainan yang dapat sembuh",
-        ],
-    },
+        "options": ["Kelainan tetap", "Normal", "Kelainan yang dapat sembuh"]},
 }
 
 # Pemetaan untuk fitur yang menggunakan teks sebagai input
