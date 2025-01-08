@@ -7,7 +7,7 @@ from DECISIONTREE import DecisionTree
 import joblib
 
 # Baca dataset
-data = pd.read_csv('cleaned_data.csv')  # Ganti dengan nama file CSV Anda
+data = pd.read_csv('bismillah.csv')  # Ganti dengan nama file CSV Anda
 
 # Pisahkan fitur (X) dan label (y)
 X = data[['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalch', 'exang', 'oldpeak', 'slope', 'ca', 'thal']].values
