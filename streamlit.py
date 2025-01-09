@@ -72,7 +72,7 @@ def predict_with_model(model, scaler, user_input):
         return f"Error: {e}"
 
 # Judul aplikasi
-st.title("Prediksi Penyakit Gagal Jantung")
+st.title("Deteksi Penyakit Gagal Jantung")
 st.write("Masukkan nilai untuk setiap fitur di bawah ini:")
 
 # Input user untuk setiap fitur
@@ -115,8 +115,8 @@ if st.button("Prediksi"):
             prediction_dt = predict_with_model(model_dt, scaler_dt, user_input)
             prediction_knn = predict_with_model(model_knn, scaler_knn, user_input)
 
-            st.success(f"[Decision Tree] Prediksi: Stadium Penyakit Gagal Jantung = {prediction_dt}")
-            st.success(f"[KNN] Prediksi: Stadium Penyakit Gagal Jantung = {prediction_knn}")
+            st.success(f"[Decision Tree] Deteksi: Stadium Penyakit Gagal Jantung = {prediction_dt}")
+            st.success(f"[KNN] Deteksi: Stadium Penyakit Gagal Jantung = {prediction_knn}")
 
             # Saran berdasarkan prediksi
             if prediction_dt == 0 and prediction_knn == 0:
