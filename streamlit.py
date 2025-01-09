@@ -108,7 +108,7 @@ for feature, details in feature_names.items():
         user_input.append(value)
 
 # Tombol prediksi
-if st.button("Prediksi"):
+if st.button("Deteksi"):
     if model_dt and scaler_dt and model_knn and scaler_knn:
         if user_input:
             # Prediksi dengan kedua model
