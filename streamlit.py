@@ -67,10 +67,10 @@ thal_map = {"Kelainan tetap": 0, "Normal": 1, "Kelainan yang dapat sembuh": 2}
 def get_stage_description(prediction):
     stages = {
         0: "Tidak ada resiko penyakit gagal jantung.",
-        1: "Tidak ada gejala yang jelas, tetapi mungkin ada faktor risiko seperti tekanan darah tinggi, kolesterol tinggi, atau kebiasaan tidak sehat.",
-        2: "Mulai muncul gejala ringan seperti sesak napas atau kelelahan, terutama selama aktivitas fisik.",
-        3: "Gejala lebih jelas, seperti nyeri dada (angina), sesak napas bahkan saat istirahat, dan pembengkakan di kaki atau pergelangan kaki akibat retensi cairan.",
-        4: "Kondisi kritis dengan gejala yang parah, sering memerlukan perawatan intensif atau transplantasi jantung."
+        1: "Tahap awal karena tidak ada gejala yang jelas, tetapi mungkin ada faktor risiko seperti tekanan darah tinggi, kolesterol tinggi, atau kebiasaan tidak sehat.",
+        2: "Tahap sedang karena mulai muncul gejala ringan seperti sesak napas atau kelelahan, terutama selama aktivitas fisik.",
+        3: "Tahap lanjutan karena gejala lebih jelas, seperti nyeri dada (angina), sesak napas bahkan saat istirahat, dan pembengkakan di kaki atau pergelangan kaki akibat retensi cairan.",
+        4: "Tahap berat dan kondisi kritis dengan gejala yang parah, sering memerlukan perawatan intensif atau transplantasi jantung."
     }
     return stages.get(prediction, "Tidak ada informasi mengenai hasil prediksi ini.")
 
