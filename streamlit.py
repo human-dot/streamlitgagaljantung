@@ -66,10 +66,11 @@ thal_map = {"Kelainan tetap": 0, "Normal": 1, "Kelainan yang dapat sembuh": 2}
 # Klasifikasi deskriptif
 def get_stage_description(prediction):
     stages = {
-        1: "Tahap Awal (Asymptomatic): Tidak ada gejala yang jelas, tetapi mungkin ada faktor risiko seperti tekanan darah tinggi, kolesterol tinggi, atau kebiasaan tidak sehat.",
-        2: "Tahap Sedang (Mild Symptoms): Mulai muncul gejala ringan seperti sesak napas atau kelelahan, terutama selama aktivitas fisik.",
-        3: "Tahap Lanjutan (Moderate Symptoms): Gejala lebih jelas, seperti nyeri dada (angina), sesak napas bahkan saat istirahat, dan pembengkakan di kaki atau pergelangan kaki akibat retensi cairan.",
-        4: "Tahap Berat (Severe Symptoms/End-stage Heart Disease): Kondisi kritis dengan gejala yang parah, sering memerlukan perawatan intensif atau transplantasi jantung."
+        0: "Tidak ada resiko penyakit gagal jantung.
+        1: "Tidak ada gejala yang jelas, tetapi mungkin ada faktor risiko seperti tekanan darah tinggi, kolesterol tinggi, atau kebiasaan tidak sehat.",
+        2: "Mulai muncul gejala ringan seperti sesak napas atau kelelahan, terutama selama aktivitas fisik.",
+        3: "Gejala lebih jelas, seperti nyeri dada (angina), sesak napas bahkan saat istirahat, dan pembengkakan di kaki atau pergelangan kaki akibat retensi cairan.",
+        4: "Kondisi kritis dengan gejala yang parah, sering memerlukan perawatan intensif atau transplantasi jantung."
     }
     return stages.get(prediction, "Tidak ada informasi mengenai hasil prediksi ini.")
 
