@@ -63,6 +63,16 @@ exang_map = {"Yes": 1, "No": 0}
 slope_map = {"Menurun": 0, "Datar": 1, "Meningkat": 2}
 thal_map = {"Kelainan tetap": 0, "Normal": 1, "Kelainan yang dapat sembuh": 2}
 
+# Klasifikasi deskriptif
+def get_stage_description(prediction):
+    stages = {
+        1: "Tahap Awal (Asymptomatic): Tidak ada gejala yang jelas, tetapi mungkin ada faktor risiko seperti tekanan darah tinggi, kolesterol tinggi, atau kebiasaan tidak sehat.",
+        2: "Tahap Sedang (Mild Symptoms): Mulai muncul gejala ringan seperti sesak napas atau kelelahan, terutama selama aktivitas fisik.",
+        3: "Tahap Lanjutan (Moderate Symptoms): Gejala lebih jelas, seperti nyeri dada (angina), sesak napas bahkan saat istirahat, dan pembengkakan di kaki atau pergelangan kaki akibat retensi cairan.",
+        4: "Tahap Berat (Severe Symptoms/End-stage Heart Disease): Kondisi kritis dengan gejala yang parah, sering memerlukan perawatan intensif atau transplantasi jantung."
+    }
+    return stages.get(prediction, "Tidak ada informasi mengenai hasil prediksi ini.")
+
 def predict_with_model(model, scaler, user_input):
     try:
         user_input_scaled = scaler.transform([user_input])
@@ -115,8 +125,12 @@ if st.button("Deteksi"):
             prediction_dt = predict_with_model(model_dt, scaler_dt, user_input)
             prediction_knn = predict_with_model(model_knn, scaler_knn, user_input)
 
+            # Hasil prediksi dan deskripsi tahap
             st.success(f"[Decision Tree] Deteksi: Stadium Penyakit Gagal Jantung = {prediction_dt}")
+            st.write(get_stage_description(prediction_dt))
+            
             st.success(f"[KNN] Deteksi: Stadium Penyakit Gagal Jantung = {prediction_knn}")
+            st.write(get_stage_description(prediction_knn))
 
             # Saran berdasarkan prediksi
             if prediction_dt == 0 and prediction_knn == 0:
